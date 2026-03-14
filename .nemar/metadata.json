@@ -2,18 +2,47 @@
   "version": "2.0",
   "pipeline_stage": "enriched",
   "title": "Face processing EEG dataset for EEGLAB",
+  "description": "This dataset comprises EEG recordings from 18 participants performing a face processing task involving perceptual judgments of famous, unfamiliar, and scrambled faces. The data were simultaneously acquired with MEG and structural MRI. EEG data have been repackaged in EEGLAB format following HED annotation and preprocessing including channel extraction, fiducial addition, event correction, resampling to 250 Hz, and run merging. The dataset supports investigation of neural responses to face categorization and repetition effects across two sessions. Note: MEG and EEG were recorded simultaneously in one session; structural MRI scans were acquired in a separate session and are preserved to support source localization.",
+  "methods_description": "EEG data were simultaneously recorded with MEG during a perceptual task in which 18 participants viewed photographs of faces (famous, unfamiliar, scrambled) and made symmetry judgments via keyboard response. Each face was presented twice with either immediate or delayed (5-15 presentations) repetition. Following event log augmentation and HED (v8.0.0) annotation, data were processed to extract EEG channels from MEG/EEG recordings, add fiducials, rename EOG and EKG channels, extract and correct events (34 ms latency shift), resample to 250 Hz, and merge runs 1-6. Data were saved in EEGLAB .set format. Channel locations should be imported from BIDS electrodes.tsv files.",
   "license": "CC0",
   "dataset_type": "raw",
   "authors": {
     "Daniel G. Wakeman": {},
     "Richard N Henson": {}
   },
-  "related_identifiers": [
+  "keywords": [
     {
-      "identifier": "10.18112/openneuro.ds002718.v1.1.0",
-      "identifier_type": "DOI",
-      "relation_type": "IsIdenticalTo"
+      "term": "EEG"
     },
+    {
+      "term": "face processing"
+    },
+    {
+      "term": "Event-Related Potentials",
+      "subject_scheme": "MeSH",
+      "scheme_uri": "https://id.nlm.nih.gov/mesh/",
+      "value_uri": "http://id.nlm.nih.gov/mesh/D018913"
+    },
+    {
+      "term": "perceptual decision making"
+    },
+    {
+      "term": "repetition effects"
+    },
+    {
+      "term": "structural MRI"
+    },
+    {
+      "term": "EEGLAB"
+    },
+    {
+      "term": "BIDS"
+    },
+    {
+      "term": "HED"
+    }
+  ],
+  "related_identifiers": [
     {
       "identifier": "10.1038/sdata.2015.1",
       "identifier_type": "DOI",
@@ -33,6 +62,11 @@
       "identifier": "10.18112/openneuro.ds000117",
       "identifier_type": "DOI",
       "relation_type": "IsDerivedFrom"
+    },
+    {
+      "identifier": "10.18112/openneuro.ds002718.v1.1.0",
+      "identifier_type": "DOI",
+      "relation_type": "IsDerivedFrom"
     }
   ],
   "funding_references": [
@@ -44,11 +78,11 @@
       "funder_name": "Elekta Ltd."
     }
   ],
+  "resource_type_specific": "Structural MRI Dataset",
   "modalities": [
     "anat",
     "eeg"
   ],
-  "resource_type_specific": "Structural MRI Dataset",
   "sizes": [
     "4.6 GB (492 files)"
   ],
@@ -59,61 +93,10 @@
     ".json",
     ".m",
     ".mat",
+    ".md",
     ".set",
     ".tsv",
     ".yml"
   ],
-  "description": "This dataset comprises EEG recordings from 18 participants performing a face processing task involving perceptual judgments of famous, unfamiliar, and scrambled faces. EEG and MEG data were simultaneously acquired in one session, while structural MRI was acquired in a separate session to support source localization. Data were collected across two recording sessions three months apart. Each face was presented twice with either immediate or delayed (5-15 presentations) repetition. This is a repackaged version of the original ds000117 dataset, with EEG data extracted from MEG/EEG files, resampled to 250 Hz, annotated with HED, and saved in EEGLAB format following minimal preprocessing to support investigation of neural responses to face categorization and repetition effects.",
-  "methods_description": "Eighteen participants completed two recording sessions spaced three months apart. One session simultaneously recorded MEG and EEG data during a perceptual task; structural MRI was acquired in a separate session to support source localization. During each session, participants made symmetry judgments on presented face photographs (famous, unfamiliar, scrambled). Each face was presented twice with either immediate or delayed (5-15 presentations) repetition. EEG data were extracted from MEG/EEG fif files, resampled to 250 Hz, annotated with HED (v8.0.0), and saved in EEGLAB .set format. Minimal preprocessing included channel extraction, fiducial addition, channel renaming, event extraction and correction, and removal of spurious events.",
-  "keywords": [
-    {
-      "term": "EEG"
-    },
-    {
-      "term": "MEG"
-    },
-    {
-      "term": "fMRI"
-    },
-    {
-      "term": "face processing"
-    },
-    {
-      "term": "face recognition"
-    },
-    {
-      "term": "event-related potentials"
-    },
-    {
-      "term": "perceptual decision-making"
-    },
-    {
-      "term": "repetition effects"
-    },
-    {
-      "term": "EEGLAB"
-    },
-    {
-      "term": "structural MRI"
-    },
-    {
-      "term": "HED annotation"
-    },
-    {
-      "term": "source localization"
-    },
-    {
-      "term": "multi-modal"
-    },
-    {
-      "term": "multi-session"
-    },
-    {
-      "term": "BIDS"
-    },
-    {
-      "term": "symmetry judgment"
-    }
-  ],
-  "source_hash": "b68e1cab34f524f45330c5e46333f5a9d651976de0eadabebfea689f3c0baa09"
+  "source_hash": "662be6e82caaf62456d0b41b5355dbe7ec6e0b8742df0da177c8005a366c0522"
 }
