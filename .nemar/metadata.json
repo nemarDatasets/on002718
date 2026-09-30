@@ -1,9 +1,9 @@
 {
   "version": "2.0",
-  "pipeline_stage": "enriched",
+  "pipeline_stage": "validated",
   "title": "Face processing EEG dataset for EEGLAB",
-  "description": "This dataset comprises EEG recordings from 18 participants performing a face processing task involving perceptual judgments of famous, unfamiliar, and scrambled faces. The data were simultaneously acquired with MEG and structural MRI. EEG data have been repackaged in EEGLAB format following HED annotation and preprocessing including channel extraction, fiducial addition, event correction, resampling to 250 Hz, and run merging. The dataset supports investigation of neural responses to face categorization and repetition effects across two sessions. Note: MEG and EEG were recorded simultaneously in one session; structural MRI scans were acquired in a separate session and are preserved to support source localization.",
-  "methods_description": "EEG data were simultaneously recorded with MEG during a perceptual task in which 18 participants viewed photographs of faces (famous, unfamiliar, scrambled) and made symmetry judgments via keyboard response. Each face was presented twice with either immediate or delayed (5-15 presentations) repetition. Following event log augmentation and HED (v8.0.0) annotation, data were processed to extract EEG channels from MEG/EEG recordings, add fiducials, rename EOG and EKG channels, extract and correct events (34 ms latency shift), resample to 250 Hz, and merge runs 1-6. Data were saved in EEGLAB .set format. Channel locations should be imported from BIDS electrodes.tsv files.",
+  "description": "This dataset is the EEG and structural MRI portion of a multi-subject, multi-modal face processing study (originally ds000117), repackaged in EEGLAB format with augmented event logs and HED annotation. Eighteen participants viewed famous, unfamiliar, and scrambled faces while making symmetry judgments. The original study had two sessions (fMRI and simultaneous MEG/EEG); only the MEEG session's EEG data and the structural MRI are included here, while MEG and fMRI data are excluded. Minimal preprocessing, including EEG channel extraction, event correction, and resampling to 250 Hz, yields a lightweight version suitable for tutorials and EEG source localization.",
+  "methods_description": "Participants completed two sessions three months apart in the original study, one with fMRI and one with simultaneous MEG/EEG; only the MEEG session is included in this dataset. In each session they responded with a key press to photographs of famous, unfamiliar, and scrambled faces, judging relative facial symmetry. Each face was presented twice, with the repeat either immediate or delayed by 5-15 presentations. EEG channels were extracted from the MEG/EEG fif files, fiducials added, events extracted and corrected (34 ms shift), data resampled to 250 Hz, runs 1-6 merged, and the result saved as EEGLAB .set. The repackaging, event log augmentation, and HED annotation were carried out by the data curators Ramon Martinez, Dung Truong, Scott Makeig, and Arnaud Delorme (UCSD, La Jolla, CA, USA). The curators are credited here rather than in the author list, which reflects the original dataset authors (Wakeman and Henson) as given in the BIDS dataset_description.json.",
   "license": "CC0",
   "dataset_type": "raw",
   "authors": {
@@ -18,35 +18,34 @@
       "term": "face processing"
     },
     {
-      "term": "Event-Related Potentials",
+      "term": "Electroencephalography",
       "subject_scheme": "MeSH",
-      "scheme_uri": "https://id.nlm.nih.gov/mesh/",
-      "value_uri": "http://id.nlm.nih.gov/mesh/D018913"
+      "value_uri": "http://id.nlm.nih.gov/mesh/D004569"
     },
     {
-      "term": "perceptual decision making"
+      "term": "HED annotation"
     },
     {
-      "term": "repetition effects"
-    },
-    {
-      "term": "structural MRI"
+      "term": "source localization"
     },
     {
       "term": "EEGLAB"
     },
     {
-      "term": "BIDS"
+      "term": "MRI"
     },
     {
-      "term": "HED"
+      "term": "visual perception"
+    },
+    {
+      "term": "MEG"
     }
   ],
   "related_identifiers": [
     {
       "identifier": "10.1038/sdata.2015.1",
       "identifier_type": "DOI",
-      "relation_type": "References"
+      "relation_type": "IsDescribedBy"
     },
     {
       "identifier": "https://github.com/nemarDatasets/on002718",
@@ -54,19 +53,14 @@
       "relation_type": "IsDescribedBy"
     },
     {
-      "identifier": "https://nemar.org/dataexplorer/detail?dataset_id=on002718",
-      "identifier_type": "URL",
-      "relation_type": "IsDescribedBy"
-    },
-    {
-      "identifier": "10.18112/openneuro.ds000117",
-      "identifier_type": "DOI",
-      "relation_type": "IsDerivedFrom"
-    },
-    {
       "identifier": "10.18112/openneuro.ds002718.v1.1.0",
       "identifier_type": "DOI",
       "relation_type": "IsDerivedFrom"
+    },
+    {
+      "identifier": "https://nemar.org/dataset/on002718",
+      "identifier_type": "URL",
+      "relation_type": "IsDescribedBy"
     }
   ],
   "funding_references": [
@@ -84,7 +78,7 @@
     "eeg"
   ],
   "sizes": [
-    "4.6 GB (492 files)"
+    "4.30 GB (492 files)"
   ],
   "formats": [
     ".bmp",
